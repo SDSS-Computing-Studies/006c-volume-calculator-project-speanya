@@ -49,18 +49,21 @@ def getParams(shape):
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
     
-    shape=""
+    
     if shape=="rectangle":
-        rectangle=["Enter the length:"+ " "+"Enter the width:"+ " "+"Enter the height:"]
+        rectangle=["Enter the length:","Enter the width:","Enter the height:"]
+        prompts=rectangle
     elif shape=="cone":
-        cone=["Enter radius:"+" "+"Enter slant height:"+ " "+"Enter height:"]
+        cone=["Enter radius:","Enter slant height:","Enter height:"]
+        prompts=cone
     elif shape=="pyramid":
-        pyramid=["Enter length:"+" "+"Enter width:"+" "+"Enter height:"]
+        pyramid=["Enter length:","Enter width:","Enter height:"]
+        prompts=pyramid
     elif shape=="cube":
         cube=["Enter length:"]
+        prompts=cube
     
-prompts=cube
-
+    return prompts
 
 
 
@@ -71,7 +74,9 @@ def getInputs(questions):
     # It will turn all the input data into a list
     # input parameter: list containing the prompts/questions
     # output parameter: return a list containing all the measurements of the shape
-    measurements
+    measurements = []
+    # use questions list, ask each question in the list and then get a number for each one
+    # and add that number to measurements list
     pass
     
     return measurements
