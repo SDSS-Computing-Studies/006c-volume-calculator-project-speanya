@@ -4,16 +4,18 @@
 
 x=1
 def title():
-    if x==2:
-        print("Yes")
     # Will display a title screen
     # input parameters: none needed
     # output parameters: None
     # Author:
     # Modified:
-    pass
-    
-    return None
+    def title():
+    print("===================================================================")
+    print("=                    3D VOLUME Calculator                         =")
+    print("=                 By: Sean, Spencer and Maya                      =")
+    print("===================================================================")
+
+
 
 def instructions():
     # Will display instructions
@@ -30,10 +32,7 @@ def getParams(shape):
     # input parameter: string 
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
-    prompts
-    pass
 
-    return prompts
 
 def getInputs(questions):
     # Will prompt the user for inputs for the shape they.
