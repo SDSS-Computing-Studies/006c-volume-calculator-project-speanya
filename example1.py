@@ -44,6 +44,6 @@ def fun4():
     print(word)
 
 print("===========")
-fun3()
+fun4()
 print(word)
 
