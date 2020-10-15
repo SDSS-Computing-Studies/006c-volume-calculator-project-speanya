@@ -59,7 +59,7 @@ def getParams(shape):
     elif shape=="cube":
         cube=["Enter length:"]
     
-
+prompts=cube
 
 
 
