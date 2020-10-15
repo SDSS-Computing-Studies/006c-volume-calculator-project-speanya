@@ -57,3 +57,46 @@ def main():
     title()
 
 main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+#2nd test
+#this is how mr yang wants it done. main file will only be "main()"
+Uin = ""
+
+def title():
+    print("===================================================================")
+    print("=                    3D VOLUME Calculator                         =")
+    print("=                         By: Spencer                             =")
+    print("===================================================================")
+
+def CubeVol(lenght):
+    answer = lenght ** 3
+    return answer
+
+while Uin != "Exit":
+    title()
+    typeoshape = input("Enter a type of 3D shape. (Cube, Rectangular Prism, Cone or Pyramid )").strip()
+    if typeoshape == "Cube":
+        CubeSide = float(input("Enter the lenght of the side"))
+        ans = CubeVol(CubeSide)
+        print(ans)
+
+def main():
+    # display title
+    # ask them for a shape or instructions
+    # 
+
+
+
+main()
