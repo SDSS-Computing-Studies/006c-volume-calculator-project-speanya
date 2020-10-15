@@ -2,10 +2,8 @@
 # Volume Calculator
 # Feel free to rename your variables
 
-x=1
+
 def title():
-    if x==2:
-        print("Yes")
     # Will display a title screen
     # input parameters: none needed
     # output parameters: None
@@ -46,40 +44,44 @@ def getInputs(questions):
     
     return measurements
 
-def main(exit):
-    pass
+def main():
     # Run program
-
-    if x==2:
-        while continued != "Yes" or continued != "No":
-            continued= input("Would you like to enter a different set of numbers? Yes or No")
-            if continued == "Yes":
-                #Go to repeat code for that shape
-                # x=1 will activate getParams
-                # getParams will then delete 1 to activate this
-           # elif continued == "No":
+    continued= ''
+    continued2= ''
+    continued3= ''
+    x= 1
+    while continued != "Yes" or continued != "No":
+        continued= input("Would you like to enter a different set of numbers? Yes or No: ")
+        if continued == "Yes":
+            getInputs(questions)
+        if continued == "No":
+            x=2
+            break
         else:
             print("Error")
-
-
-                while continued3 == "No":
-                    continued2= input("Would you like to pick a different shape to calculate? Yes or No")
-                    if continued2 == "Yes":
-                        #Go to choose shape page
-                    elif continued2 == "No":
-                            continued3= input("Would you like to quit? Yes or No")
-                            if continued3 == "Yes":
-                                break
-                                #Go to title
-
-
-
-    # main block of code that will run your program and control program flow
-    # You will need to include a while loop to keep repeating the commands until
-    # the user chooses to exit
-
+            
+    if x == 2:
+        while continued3 != "Yes":
+            continued2= input("Would you like to pick a different shape to calculate? Yes or No: ")
+            if continued2 == "Yes":
+                getParams(shape)
+            if continued2 == "No":
+                continued3= input("Would you like to quit? Yes or No: ")
+                if continued3 == "Yes":
+                    break
+                    title()
+                else:
+                    print("Error")
 
 main()
+
+
+# main block of code that will run your program and control program flow
+# You will need to include a while loop to keep repeating the commands until
+# the user chooses to exit
+
+
+
 
 
 
