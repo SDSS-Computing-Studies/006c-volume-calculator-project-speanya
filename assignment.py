@@ -51,18 +51,18 @@ def getParams(shape):
     
     
     if shape=="rectangle":
-        rectangle=["Enter the length:","Enter the width:","Enter the height:"]
-        prompts=rectangle
+        dimension_list=["Enter the length:","Enter the width:","Enter the height:"]
+        
     elif shape=="cone":
-        cone=["Enter radius:","Enter slant height:","Enter height:"]
-        prompts=cone
+        dimension_list=["Enter radius:","Enter slant height:","Enter height:"]
+        
     elif shape=="pyramid":
-        pyramid=["Enter length:","Enter width:","Enter height:"]
-        prompts=pyramid
+        dimension_list=["Enter length:","Enter width:","Enter height:"]
+        
     elif shape=="cube":
-        cube=["Enter length:"]
-        prompts=cube
-    
+        dimension_list=["Enter length:"]
+        
+    prompts=dimenion_list
     return prompts
 
 
@@ -77,10 +77,29 @@ def getInputs(questions):
     measurements = []
     # use questions list, ask each question in the list and then get a number for each one
     # and add that number to measurements list
-    pass
-    
-    return measurements
+     if shape == "rectangle":
+        lengthRec = float(input(dimension_list[0]))
+        widthRec = float(input(dimension_list[1]))
+        heightRec = float(input(dimension_list[2]))
+        measurments = [lengthRec,widthRec,heightRec]
 
+    elif shape == "cone":
+        radiusCone = float(input(dimension_list[0]))
+        heightCone = float(input(conelist[1]))
+        measurments = [radiusCone,heightCone]
+
+    elif shape == "pyramid":
+        lengthPyra = float(input(dimension_list[0]))
+        widthPyra = float(input(dimension_list[1]))
+        heightPyra = float(input(dimension_list[2]))
+        measurments = [lengthPyra,widthPyra,heightPyra]
+
+    elif shape == "cube":
+        lengthCube = float(input(dimension_list[0]))
+        measurments = [lengthCube]
+
+    return measurments
+    
 def main():
     # Run program
     continued= ''
