@@ -59,13 +59,22 @@ def getParams(shape):
     elif shape=="cube":
         cube=["Enter length:"]
     
-prompts=cube
 
 
 
 
 
-def getInputs(questions):
+
+def getInputs(rectangle,cone,pyramid,cube):
+    import getParams
+
+    shape= input("Please enter the shape: ")
+
+
+
+
+
+
     # Will prompt the user for inputs for the shape they.
     # These will be asked so that the user can enter in appropriate values
     # It will turn all the input data into a list
@@ -75,6 +84,13 @@ def getInputs(questions):
     pass
     
     return measurements
+
+
+
+
+
+
+
 
 def main():
     # Run program
