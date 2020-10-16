@@ -38,30 +38,32 @@ def instructions():
     print("The volume of the rectangle you entered is 60.")
     print("Quit program?:'quit'")
     print("==============")
-    return
 
-def getParams():
+def getParams(shape):
     # Will create a list of questions to be asked depending on the shape.
     # These will be asked so that the user can enter in appropriate values
     # input parameter: string 
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
     
-    shape = input("Enter a shape:")
-
-    if shape = "rectangle":
-        rectanglelist = ["Enter the length:","Enter the width:","Enter the height:"]
-
-    elif shape = "cone":
-        conelist = ["Enter radius:","Enter height:"]
-
-    elif shape = "pyramid":
-        pyramidlist = ["Enter length:","Enter width:","Enter height:"]
-
-    elif shape = "cube":
-        cubelist = ["Enter length:"]
     
-    return
+    
+    if shape == "rectangle":
+        
+        qlist = ["Enter the length:","Enter the width:","Enter the height:"]
+        
+    elif shape == "cone":
+        
+        qlist = ["Enter radius:","Enter height:"]
+        
+    elif shape == "pyramid":
+        
+        qlist = ["Enter length:","Enter width:","Enter height:"]
+        
+    elif shape == "cube":
+        qlist = ["Enter length:"]
+        
+    return qlist
 
 
 
@@ -74,26 +76,31 @@ def getInputs():
     # output parameter: return a list containing all the measurements of the shape
     # use questions list, ask each question in the list and then get a number for each one
     # and add that number to measurements list
-    if shape = "rectangle":
-        lengthRec = float(input(rectanglelist[0]))
-        widthRec = float(input(rectanglelist[1]))
-        heightRec = float(input(rectanglelist[2]))
+    if shape == "rectangle":
+        lengthRec = float(input(qlist[0]))
+        widthRec = float(input(qlist[1]))
+        heightRec = float(input(qlist[2]))
         measurments = [lengthRec,widthRec,heightRec]
 
-    elif shape = "cone":
-        radiusCone = float(input(conelist[0]))
-        heightCone = float(input(conelist[1]))
+    elif shape == "cone":
+        radiusCone = float(input(qlist[0]))
+        heightCone = float(input(qlist[1]))
         measurments = [radiusCone,heightCone]
+        
 
-    elif shape = "pyramid":
-        lengthPyra = float(input(pyramidlist[0]))
-        widthPyra = float(input(pyramidlist[1]))
-        heightPyra = float(input(pyramidlist[2]))
+
+    elif shape == "pyramid":
+        lengthPyra = float(input(qlist[0]))
+        widthPyra = float(input(qlist[1]))
+        heightPyra = float(input(qlist[2]))
         measurments = [lengthPyra,widthPyra,heightPyra]
+        
 
-    elif shape = "cube":
-        lengthCube = float(input(cubelist[0]))
+    elif shape == "cube":
+        
+        lengthCube = float(input(qlist[0]))
         measurments = [lengthCube]
+        
 
     return measurments
 
@@ -101,34 +108,48 @@ def getInputs():
 
 
 def calculations():
-    if shape = "rectangle":
+    if shape == "rectangle":
+        
         answer = float(measurments[0] * measurments[1] * measurments[2])
+        
     #Rectangle V = L * H * W
     
-    elif shape = "cone":
+    elif shape == "cone":
+        
         answer = float((1/3) * measurments[1] * math.pi * (measurments[0] * 2))
+        
     #Cone V=1/3hπr²
 
-    elif shape = "pyramid":
+    elif shape == "pyramid":
+        
         answer = float(((measurments[0] * measurments[1]) * measurments[2]) / (1/3))
+        
     #Pyramid (base*height)/(1/3)
 
-    if shape = "cube":
+    if shape == "cube":
+        
         answer = float(measurments[0] ** 3)
+        
     #Cube**3
 
-
+    return answer
 
 def main():
     # Run program
-continoo = ""
-while continoo != "Exit":
-    title()
-    instructions()
-    getParams()
-    getInputs()
-    calculations()
-    continoo = float(input("Would youu like to Continue or Exit the program?"))
+    global continoo
+    continoo = ""
+    
+    while continoo != "Exit":
+        title()
+        instructions()
+
+        shape = input("Enter a shape:")
+        questions = getParams(shape)
+        
+        getParams()
+        getInputs()
+        calculations()
+        continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
 
 main()
 
