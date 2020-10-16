@@ -1,7 +1,6 @@
 #!python3
 # Volume Calculator
 # Feel free to rename your variables
-x=1
 
 def title():
 
