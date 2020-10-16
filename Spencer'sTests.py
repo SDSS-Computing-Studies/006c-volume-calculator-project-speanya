@@ -1,1 +1,0 @@
-print("[osidhfoiewhfi8weh, ehfioewrhgiw8rohg, fhiuwegfuiwegfi]")
