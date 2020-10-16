@@ -94,24 +94,24 @@ def calculations(shape,measurments):
     if shape == "rectangle":
         
         answer = str(measurments[0] * measurments[1] * measurments[2])
-        print("The volume for the shape you entered is"+" "+answer+".")
+        answer = ("The volume for the shape you entered is"+" "+answer+".")
     #Rectangle V = L * H * W
     
     elif shape == "cone":
         
         answer = str((1/3) * measurments[1] * math.pi * (measurments[0] ** 2))
-        print("The volume for the shape you entered is"+ " "+answer+".")
+        answer = ("The volume for the shape you entered is"+ " "+answer+".")
     #Cone V=1/3hπr²
     #answer=str(math.pi*(measurments[0])
     elif shape == "pyramid":
         
         answer = str(((measurments[0] * measurments[1]) * measurments[2]) * (1/3))
-        print("The volume for the shape you entered is"+ " "+answer+".")
+        answer = ("The volume for the shape you entered is"+ " "+answer+".")
     #Pyramid (base*height)/(1/3)
     if shape == "cube":
         
         answer = str(measurments[0] ** 3)
-        print("The volume for the shape you entered is"+ " "+answer+".")
+        answer = ("The volume for the shape you entered is"+ " "+answer+".")
     #Cube**3
     return answer
 def main():
@@ -126,14 +126,14 @@ def main():
             shape = input("Enter a shape:")
             questions=getParams(shape)
             x=getInputs(shape,questions)
-            calculations(shape,x)
+            print(calculations(shape,x))
             continoo = str(input("Would you like to continue or exit the program? If you want to exit, type 'exit'. If not, type anything else. "))
         else: 
 
             shape = input("Enter a shape:")
             questions=getParams(shape)
             x=getInputs(shape,questions)
-            calculations(shape,x)
+            print(calculations(shape,x))
             continoo = str(input("Would you like to continue or exit the program? If you want to exit, type 'exit'. If not, type anything else. "))
 
 main()
@@ -145,3 +145,5 @@ main()
 #Pyramid (base*height)/(1/3)
 #Cube**3
 #Rectangle V = L * H * W
+
+
