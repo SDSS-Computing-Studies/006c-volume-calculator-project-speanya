@@ -68,7 +68,7 @@ def getParams(shape):
 
 
 
-def getInputs():
+def getInputs(shape,qlist):
     # Will prompt the user for inputs for the shape they.
     # These will be asked so that the user can enter in appropriate values
     # It will turn all the input data into a list
@@ -107,7 +107,7 @@ def getInputs():
 
 
 
-def calculations():
+def calculations(shape,measurments):
     if shape == "rectangle":
         
         answer = float(measurments[0] * measurments[1] * measurments[2])
@@ -136,7 +136,6 @@ def calculations():
 
 def main():
     # Run program
-    global continoo
     continoo = ""
     
     while continoo != "Exit":
@@ -144,11 +143,9 @@ def main():
         instructions()
 
         shape = input("Enter a shape:")
-        questions = getParams(shape)
-        
-        getParams()
-        getInputs()
-        calculations()
+        questions=getParams(shape)
+        x=getInputs(shape,questions)
+        calculations(shape,x)
         continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
 
 main()
