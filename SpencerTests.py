@@ -22,6 +22,7 @@ def instructions():
     # output parameters: None
     # Author: Maya 
     # Modified:
+
     print("==============")
     print("Instructions:")
     print("-This program is able to calculate the volume of a cube, cone, pyramid, or rectangle.")
@@ -140,13 +141,21 @@ def main():
     
     while continoo != "Exit":
         title()
-        instructions()
+        hm = input("Would you like to see the instructions? Yes or No.")
+        if hm == "Yes":
+            instructions()
+            shape = input("Enter a shape:")
+            questions=getParams(shape)
+            x=getInputs(shape,questions)
+            calculations(shape,x)
+            continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
+        else: 
 
-        shape = input("Enter a shape:")
-        questions=getParams(shape)
-        x=getInputs(shape,questions)
-        calculations(shape,x)
-        continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
+            shape = input("Enter a shape:")
+            questions=getParams(shape)
+            x=getInputs(shape,questions)
+            calculations(shape,x)
+            continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
 
 main()
 
