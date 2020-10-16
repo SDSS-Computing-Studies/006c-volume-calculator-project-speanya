@@ -5,8 +5,8 @@ def title():
     # Will display a title screen
     # input parameters: none needed
     # output parameters: None
-    # Author:
-    # Modified:
+    # Author: Spencer
+    # Modified: Maya, Sean 
     print("===================================================================")
     print("=                    3D VOLUME Calculator                         =")
     print("=                 By: Sean, Spencer and Maya                      =")
@@ -16,7 +16,7 @@ def instructions():
     # input parameters: none needed
     # output parameters: None
     # Author: Maya 
-    # Modified:
+    # Modified: n/a
 
     print("==============")
     print("Instructions:")
@@ -40,7 +40,8 @@ def getParams(shape):
     # input parameter: string 
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
-    
+    #Author: Maya
+    #Modified: Spencer
     
     
     if shape == "rectangle":
@@ -67,6 +68,8 @@ def getInputs(shape,qlist):
     # output parameter: return a list containing all the measurements of the shape
     # use questions list, ask each question in the list and then get a number for each one
     # and add that number to measurements list
+    #Author: Sean
+    #Modified: Spencer
     if shape == "rectangle":
         lengthRec = float(input(qlist[0]))
         widthRec = float(input(qlist[1]))
@@ -90,6 +93,9 @@ def getInputs(shape,qlist):
         
     return measurments
 def calculations(shape,measurments):
+    #To calculate the volume for the inputed shape 
+    #Author: Spencer
+    #Modified: Maya 
     import math 
     if shape == "rectangle":
         
@@ -116,6 +122,8 @@ def calculations(shape,measurments):
     return answer
 def main():
     # Run program
+    #Author: Sean 
+    #Modified: Spencer, Maya 
     continoo = ""
 
     while continoo != "exit":
