@@ -34,6 +34,10 @@ def instructions():
     print("The volume of the rectangle you entered is 60.")
     print("Quit program?:'quit'")
     print("==============")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
 def getParams(shape):
     # Will create a list of questions to be asked depending on the shape.
     # These will be asked so that the user can enter in appropriate values
@@ -59,6 +63,13 @@ def getParams(shape):
         qlist = ["Enter length:"]
         
     return qlist
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
 def getInputs(shape,qlist):
     # Will prompt the user for inputs for the shape they.
     # These will be asked so that the user can enter in appropriate values
@@ -72,22 +83,36 @@ def getInputs(shape,qlist):
         widthRec = float(input(qlist[1]))
         heightRec = float(input(qlist[2]))
         measurments = [lengthRec,widthRec,heightRec]
+<<<<<<< HEAD
+=======
+
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
     elif shape == "cone":
         radiusCone = float(input(qlist[0]))
         heightCone = float(input(qlist[1]))
         measurments = [radiusCone,heightCone]
         
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
     elif shape == "pyramid":
         lengthPyra = float(input(qlist[0]))
         widthPyra = float(input(qlist[1]))
         heightPyra = float(input(qlist[2]))
         measurments = [lengthPyra,widthPyra,heightPyra]
         
+<<<<<<< HEAD
+=======
+
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
     elif shape == "cube":
         
         lengthCube = float(input(qlist[0]))
         measurments = [lengthCube]
         
+<<<<<<< HEAD
     return measurments
 def calculations(shape,measurments):
     import math 
@@ -95,10 +120,24 @@ def calculations(shape,measurments):
         
         answer = str(measurments[0] * measurments[1] * measurments[2])
         print("The volume for the shape you entered is"+" "+answer+".")
+=======
+
+    return measurments
+
+
+
+
+def calculations(shape,measurments):
+    if shape == "rectangle":
+        
+        answer = float(measurments[0] * measurments[1] * measurments[2])
+        
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
     #Rectangle V = L * H * W
     
     elif shape == "cone":
         
+<<<<<<< HEAD
         answer = str((1/3) * measurments[1] * math.pi * (measurments[0] * 2))
         print("The volume for the shape you entered is"+ " "+answer+".")
     #Cone V=1/3hπr²
@@ -117,6 +156,30 @@ def main():
     # Run program
     continoo = ""
 
+=======
+        answer = float((1/3) * measurments[1] * math.pi * (measurments[0] * 2))
+        
+    #Cone V=1/3hπr²
+
+    elif shape == "pyramid":
+        
+        answer = float(((measurments[0] * measurments[1]) * measurments[2]) / (1/3))
+        
+    #Pyramid (base*height)/(1/3)
+
+    if shape == "cube":
+        
+        answer = float(measurments[0] ** 3)
+        
+    #Cube**3
+
+    return answer
+
+def main():
+    # Run program
+    continoo = ""
+    
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
     while continoo != "Exit":
         title()
         hm = input("Would you like to see the instructions? Yes or No.")
@@ -133,7 +196,11 @@ def main():
             questions=getParams(shape)
             x=getInputs(shape,questions)
             calculations(shape,x)
+<<<<<<< HEAD
             continoo = float(input("Would you like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
+=======
+            continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
+>>>>>>> 415405b33f833f6bde7d8f6c6f5828a695d20725
 
 main()
 
