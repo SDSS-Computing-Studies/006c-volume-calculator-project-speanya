@@ -1,8 +1,6 @@
-#!python3
+ #!python3
 # Volume Calculator
 # Feel free to rename your variables
-
-
 def title():
     # Will display a title screen
     # input parameters: none needed
@@ -13,15 +11,13 @@ def title():
     print("=                    3D VOLUME Calculator                         =")
     print("=                 By: Sean, Spencer and Maya                      =")
     print("===================================================================")
-
-
-
 def instructions():
     # Will display instructions
     # input parameters: none needed
     # output parameters: None
     # Author: Maya 
     # Modified:
+
     print("==============")
     print("Instructions:")
     print("-This program is able to calculate the volume of a cube, cone, pyramid, or rectangle.")
@@ -38,7 +34,6 @@ def instructions():
     print("The volume of the rectangle you entered is 60.")
     print("Quit program?:'quit'")
     print("==============")
-
 def getParams(shape):
     # Will create a list of questions to be asked depending on the shape.
     # These will be asked so that the user can enter in appropriate values
@@ -64,10 +59,6 @@ def getParams(shape):
         qlist = ["Enter length:"]
         
     return qlist
-
-
-
-
 def getInputs(shape,qlist):
     # Will prompt the user for inputs for the shape they.
     # These will be asked so that the user can enter in appropriate values
@@ -81,89 +72,74 @@ def getInputs(shape,qlist):
         widthRec = float(input(qlist[1]))
         heightRec = float(input(qlist[2]))
         measurments = [lengthRec,widthRec,heightRec]
-
     elif shape == "cone":
         radiusCone = float(input(qlist[0]))
         heightCone = float(input(qlist[1]))
         measurments = [radiusCone,heightCone]
         
-
-
     elif shape == "pyramid":
         lengthPyra = float(input(qlist[0]))
         widthPyra = float(input(qlist[1]))
         heightPyra = float(input(qlist[2]))
         measurments = [lengthPyra,widthPyra,heightPyra]
         
-
     elif shape == "cube":
         
         lengthCube = float(input(qlist[0]))
         measurments = [lengthCube]
         
-
     return measurments
-
-
-
-
 def calculations(shape,measurments):
+    import math 
     if shape == "rectangle":
         
-        answer = float(measurments[0] * measurments[1] * measurments[2])
-        
+        answer = str(measurments[0] * measurments[1] * measurments[2])
+        print("The volume for the shape you entered is"+" "+answer+".")
     #Rectangle V = L * H * W
     
     elif shape == "cone":
         
-        answer = float((1/3) * measurments[1] * math.pi * (measurments[0] * 2))
-        
+        answer = str((1/3) * measurments[1] * math.pi * (measurments[0] * 2))
+        print("The volume for the shape you entered is"+ " "+answer+".")
     #Cone V=1/3hπr²
-
     elif shape == "pyramid":
         
-        answer = float(((measurments[0] * measurments[1]) * measurments[2]) / (1/3))
-        
+        answer = str(((measurments[0] * measurments[1]) * measurments[2]) / (1/3))
+        print("The volume for the shape you entered is"+ " "+answer+".")
     #Pyramid (base*height)/(1/3)
-
     if shape == "cube":
         
-        answer = float(measurments[0] ** 3)
-        
+        answer = str(measurments[0] ** 3)
+        print("The volume for the shape you entered is"+ " "+answer+".")
     #Cube**3
-
     return answer
-
 def main():
     # Run program
     continoo = ""
-    
+
     while continoo != "Exit":
         title()
-        instructions()
+        hm = input("Would you like to see the instructions? Yes or No.")
+        if hm == "Yes":
+            instructions()
+            shape = input("Enter a shape:")
+            questions=getParams(shape)
+            x=getInputs(shape,questions)
+            calculations(shape,x)
+            continoo = float(input("Would you like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
+        else: 
 
-        shape = input("Enter a shape:")
-        questions=getParams(shape)
-        x=getInputs(shape,questions)
-        calculations(shape,x)
-        continoo = float(input("Would youu like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
+            shape = input("Enter a shape:")
+            questions=getParams(shape)
+            x=getInputs(shape,questions)
+            calculations(shape,x)
+            continoo = float(input("Would you like to Continue or Exit the program? If you want to exit enter, type 'Exit'. If not type anything else. "))
 
 main()
-
 
 # main block of code that will run your program and control program flow
 # You will need to include a while loop to keep repeating the commands until
 # the user chooses to exit
-
-
-
-
-
-
-
-
-
-
 #Cone V=1/3hπr²
 #Pyramid (base*height)/(1/3)
 #Cube**3
